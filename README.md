@@ -10,7 +10,7 @@ I also wanted to play around with rails engines.
 
 Prerequisites
 -------------
-- Rails 3
+- Rails > 3.1.0
 - Using git for deployment
 
 Installation
