@@ -1,7 +1,8 @@
-require 'grit'
-
 GitVersion::Engine.routes.draw do
-  root :to => proc {|env| [200, {}, [ENV['COMMIT_HASH'] || Grit::Repo.new(Rails.root + '.git').commits.first.id[0...7]]]}
+  root :to => proc { |env|
+    version = ENV['COMMIT_HASH'] || `git rev-parse HEAD`
+    [200, {'Content-Type' => 'text/plain'}, [version]]
+  }
 end
 
 Rails.application.routes.draw do
