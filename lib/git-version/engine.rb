@@ -3,3 +3,4 @@ module GitVersion
     isolate_namespace GitVersion
   end
 end
+
